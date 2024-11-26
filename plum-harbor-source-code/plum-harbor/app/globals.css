@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #191b24;
+  --foreground: #f0f0f1;
+  --negativeForeground: #1a1a24;
+  --generalBorderRadius: 0.76rem;
+  --loginFormBorderRadius: 20.6px;
+  --descriptionGray: #86868d;
+  --firstThemeColor: #4246CE;
+  --middleThemeColor: #5c3fcd;
+  --secondThemeColor: #7538CB;
+  --navbarBackgroundWhenLoggedIn: #050607;
+  --adjacentPatternForeground: #CECECE;
+  --scrollbarHandleColorHovered: #6c52d2;
+  --loginFormBackground: #020207;
+  --defaultChronicleHoverColor: #a594fd;
+  --eyeIconBackground: #c1c1c9;
+  --mobileNavigationBarBackgroundColor: #050509;
+  --notificationForeground: #f1f1f7;
+  --logoutModalFirstColor: #eeeeee;
+  --logoutModalSecondColor: #242426;
+  --notificationBorderRadius: 0.7rem;
+  --notificationCloseButtonBorderRadius: 0.7rem;
+  --timerTrackColor: rgba(255, 255, 255, 0.3);
+  --timerThumbColor: rgba(255, 255, 255, 0.8);
+  --sharedFilesDefaultColor: #834cd0;
+  --sharedFilesSecondColor: #f0f0f1;
+  --generalErrorColor: #ff2026;
+  --deleteChronicleButtonColor: #ff6b7e;
+
+  --cs1: #005e38;
+  --cs2: #03a65a;
+  --cw1: #35394c;
+  --cw2: #636a8e;
+  --ce1: #851d41;
+  --ce2: #db3056;
+
+  --password-vault-scroller-handle-color: #28afb0;
+  --password-vault-line-color: #28afb0;
+  --password-vault-container-height: 498px;
+  --password-vault-background-color: var(--foreground);
+  --password-vault-foreground-color: var(--background);
+
+  --alwaysDarkModeDefaultChronicleHoverColor: #a594fd;
+  --alwaysDarkModeForeground: #f0f0f1;
+  --alwaysDarkModeNegativeForeground: #1a1a24;
+  --constantFileProcessingPopUpWhite: #eeeef1;
+  --constantFileProcessingPopUpFilenameColor: #ffffff;
+  --progressBarFirstColor: #00aaff;
+  --progressBarSecondColor: #7538CB;
+
+  --titleWithFancyHoverEffectTextSize: 18px;
+  --titleWithFancyHoverEffectLetterSpacing: -.0035em;
+
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar Styles   --hintColor: #9ca3af;*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--foreground);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--middleThemeColor);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbarHandleColorHovered);
+}
