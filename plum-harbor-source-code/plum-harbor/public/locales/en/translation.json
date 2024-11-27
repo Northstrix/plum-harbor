@@ -142,6 +142,6 @@
     "deleting-file-tag": "Deleting file tag",
     "failed-to-delete-file-tag": "Failed to delete file!",
     "file-tag-deleted-successfully-top": "File tag deleted successfully!",
-    "delete_file_tag_confirmation": "Are you sure you want to delete this file?",
+    "delete_file_tag_confirmation": "Are you sure you want to delete this file tag?",
     "recipient": "Recipient"
   }
