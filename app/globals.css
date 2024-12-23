@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #262630;
+  --foreground: #f7f7ff;
+  --notLoggedInBackground: #181820;
+  --navbarBackgroundWhenNotLoggedIn: #111118;
+  --negativeForeground: hsl(240, 16%, 12%);
+  --generalBorderRadius: 0.76em;
+  --loginFormBorderRadius: 2.25em;
+  --descriptionGray: #86868d;
+  --firstThemeColor: #4246CE;
+  --middleThemeColor: #5c3fcd;
+  --secondThemeColor: #7538CB;
+  --navbarBackgroundWhenLoggedIn: #0a070e;
+  --adjacentPatternForeground: #CECECE;
+  --scrollbarHandleColorHovered: #6c52d2;
+  --loginFormBackground: #020207;
+  --defaultChronicleHoverColor: #a594fd;
+  --eyeIconBackground: #c1c1c9;
+  --notificationForeground: #f1f1f7;
+  --logoutModalFirstColor: #eeeeee;
+  --logoutModalSecondColor: #242426;
+  --notificationBorderRadius: 1.1em;
+  --notificationCloseButtonBorderRadius: 50%;
+  --timerTrackColor: rgba(255, 255, 255, 0.3);
+  --timerThumbColor: rgba(255, 255, 255, 0.8);
+  --sharedFilesDefaultColor: #834cd0;
+  --sharedFilesSecondColor: #f0f0f1;
+  --generalErrorColor: #ff2026;
+  --deleteOutlinedChronicleButtonColor: #ff3f44;
+  --deleteChronicleButtonColor: #ff6b7e;
+  --FileContainerRounding: 1.76em;
+
+  --mainWindowRounding: 18px;
+  --fileContainerBackground: #151419;
+  --separatorColor: #2F2B2A;
+
+  --featureCardBorderColor: #3f3f54;
+  --featureCardBackgroundColor: #2b2b3a;
+
+  --hoverBackgroundColor: #393948;
+
+  --cs1: #05478a;
+  --cs2: #0070e0;
+  --cw1: #35394c;
+  --cw2: #636a8e;
+  --ce1: #851d41;
+  --ce2: #db3056;
+
+  --password-vault-scroller-handle-color: #28afb0;
+  --password-vault-line-color: #28afb0;
+  --password-vault-container-height: 498px;
+  --password-vault-background-color: var(--foreground);
+  --password-vault-foreground-color: var(--background);
+  --passwordVaultSheetRounding: 2.25em;
+
+  --alwaysDarkModeDefaultChronicleHoverColor: #a594fd;
+  --alwaysDarkModeForeground: #f0f0f1;
+  --alwaysDarkModeNegativeForeground: #1a1a24;
+  --constantFileProcessingPopUpWhite: #eeeef1;
+  --constantFileProcessingPopUpFilenameColor: #ffffff;
+  --progressBarFirstColor: #00aaff;
+  --progressBarSecondColor: #7538CB;
+
+  --titleWithFancyHoverEffectTextSize: 18px;
+  --titleWithFancyHoverEffectLetterSpacing: -.0035em;
+
+  --firstLogoColor: #4246CE;
+  --middleLogoColor: #5c3fcd;
+  --secondLogoColor: #7538CB;
+
+  --homepage-purple-text-gradient-color: #7829b4;
+  --homepage-blue-text-gradient-color: #0F50AF;
+  --homepage-gray-text-gradient-color: #AE90C0;
+
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar Styles   --hintColor: #9ca3af;*/
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--middleThemeColor);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbarHandleColorHovered);
+}
