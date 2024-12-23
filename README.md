@@ -8,17 +8,6 @@ SourceForge page: https://sourceforge.net/p/plum-harbor/
 Codeberg page: https://codeberg.org/Northstrix/plum-harbor
 
 
-German version:
-
-https://sourceforge.net/p/plum-harbor-deutsch
-
-https://github.com/Northstrix/plum-harbor-deutsch
-
-https://codeberg.org/Northstrix/plum-harbor-deutsch
-
-Deployed app: https://plum-harbor-deutsch.netlify.app/
-
-
 ![Alt Homepage English](https://github.com/Northstrix/plum-harbor/blob/main/screenshots/Home-Page-English.png?raw=true)
 
 ![Alt Homepage Hebrew](https://github.com/Northstrix/plum-harbor/blob/main/screenshots/Home-Page-Hebrew.png?raw=true)
