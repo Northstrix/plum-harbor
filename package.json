@@ -11,6 +11,10 @@
   "dependencies": {
     "@fontsource/alef": "^5.1.0",
     "@fontsource/roboto-mono": "^5.1.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@popperjs/core": "^2.11.8",
     "@tabler/icons-react": "^3.21.0",
     "@types/styled-components": "^5.1.34",

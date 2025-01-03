@@ -30,7 +30,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ isOpen, onClose }) 
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 9999,
-      overflowY: 'auto',
     }}>
       <div style={{
         backgroundColor: 'var(--background)',
@@ -38,6 +37,9 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ isOpen, onClose }) 
         borderRadius: '10px',
         maxWidth: '402px',
         width: '100%',
+        maxHeight: '90vh',
+        display: 'flex',
+        flexDirection: 'column',
         color: '#f7f7ff',
       }}>
         <h2 style={{ 
@@ -48,38 +50,44 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ isOpen, onClose }) 
         }}>
           Language
         </h2>
-        {languages.map((lang) => (
-          <div key={lang.code} style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '1px',  // Increased margin
-            cursor: 'pointer',
-            backgroundColor: i18n.language === lang.code ? 'var(--navbarBackgroundWhenNotLoggedIn)' : 'transparent',
-            padding: '20px',  // Increased padding
-            borderRadius: '15px',
-            transform: lang.code === 'he' ? 'scaleX(-1)' : 'none',
-          }} onClick={() => handleLanguageSelect(lang.code)}>
-            <img 
-              src={lang.flag} 
-              alt={lang.name} 
-              width={123} 
-              height="auto" 
-              style={{ 
-                marginRight: '10px', 
-                borderRadius: '5px',
-                transform: lang.code === 'he' ? 'scaleX(-1)' : 'none',
-              }} 
-            />
-            <span style={{
+        <div style={{
+          overflowY: 'auto',
+          flexGrow: 1,
+          marginBottom: '20px',
+        }}>
+          {languages.map((lang) => (
+            <div key={lang.code} style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '1px',
+              cursor: 'pointer',
+              backgroundColor: i18n.language === lang.code ? 'var(--navbarBackgroundWhenNotLoggedIn)' : 'transparent',
+              padding: '20px',
+              borderRadius: '15px',
               transform: lang.code === 'he' ? 'scaleX(-1)' : 'none',
-              wordBreak: 'keep-all',
-              whiteSpace: 'normal',
-              fontSize: 'clamp(16px, 3vw, 20px)',
-              lineHeight: '1.2',
-            }}>{lang.name}</span>
-          </div>
-        ))}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            }} onClick={() => handleLanguageSelect(lang.code)}>
+              <img 
+                src={lang.flag} 
+                alt={lang.name} 
+                width={123} 
+                height="auto" 
+                style={{ 
+                  marginRight: '10px', 
+                  borderRadius: '5px',
+                  transform: lang.code === 'he' ? 'scaleX(-1)' : 'none',
+                }} 
+              />
+              <span style={{
+                transform: lang.code === 'he' ? 'scaleX(-1)' : 'none',
+                wordBreak: 'keep-all',
+                whiteSpace: 'normal',
+                fontSize: 'clamp(16px, 3vw, 20px)',
+                lineHeight: '1.2',
+              }}>{lang.name}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <ChronicleButton 
             text={t('ok_button')} 
             width="160px"

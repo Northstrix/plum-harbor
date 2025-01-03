@@ -11,4 +11,5 @@ export interface Language {
     { code: 'gsw', name: 'Schwiizerdütsch', flag: '/Flag_of_Switzerland.svg' },
     { code: 'bar', name: 'Österreichisches Deutsch', flag: '/Flag_of_Austria.svg' },
     { code: 'de', name: 'Hochdeutsch', flag: '/Flag_of_Germany.svg' },
+    { code: 'pt', name: 'Português Brasileiro', flag: '/Flag_of_Brazil.svg' },
   ];

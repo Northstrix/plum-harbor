@@ -147,5 +147,16 @@
     "failed-to-save-settings": "Failed to save settings!",
     "settings-saved-successfully-top": "Settings saved successfully!",
     "app-sub-description1": "This app is currently in the experimental phase and hasn't undergone a security audit.",
-    "app-sub-description2": "Use it your own risk!"
+    "app-sub-description2": "Use it your own risk!",
+    "features": "Features",
+    "feature-1-name": "End-to-end encryption",
+    "feature-1-description": "Each file is encrypted on the client side using the \"HMAC-SHA512 + ChaCha20 + Serpent-256 CBC\" authenticated encryption scheme before being uploaded to the cloud.",
+    "feature-2-name": "Personal File Storage",
+    "feature-2-description": "You can store your personal files in the cloud that are encrypted using the keys derived from your master password.",
+    "feature-3-name": "Quantum-resistant cryptpography",
+    "feature-3-description": "The app uses symmetric algorithms for file encryption, and ML-KEM-1024 for quantum-resistant key wrapping.",
+    "feature-4-name": "Integrity check",
+    "feature-4-description": "Verifies integrity of files and records using cryptographically secure HMAC-SHA512 tags.",
+    "feature-5-name": "Dedicated password vault",
+    "feature-5-description": "The app employs the same encryption scheme used for file encryption to safeguard your login credentials."
   }

@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next';
 import FancyNavBar from '@/components/ui/FancyNavbar'
 import "@fontsource/roboto-mono/700.css";
 import LanguageSelector from "@/components/ui/LanguageSelector"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 interface SquareProps {
   color: string;
@@ -42,14 +45,12 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ setShowLogin, setIsRegist
     width?: number;
     height?: string | number;
     color?: string;
-    language: string;
   }
   
   const LanguageIcon: React.FC<LanguageIconProps> = ({ 
     width = 24, 
     height = 'auto', 
     color = 'currentColor',
-    language
   }) => {
     return (
       <svg 
@@ -86,7 +87,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ setShowLogin, setIsRegist
       }, 30); 
 
       return () => clearInterval(fadeIn);
-    }, 2000);
+    }, 940);
 
     return () => clearTimeout(showDelay);
   }, []);
@@ -157,7 +158,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ setShowLogin, setIsRegist
               <Square color="#00000000" />
               <Square color="var(--firstLogoColor)" />
             </div>
-            {(windowWidth >= 1080) && (
+            {(windowWidth >= 664) && (
               <span style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
@@ -172,37 +173,56 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ setShowLogin, setIsRegist
           </Link>
         
         {/* Language Switcher and Login Button */}
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <ul style={{
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '72px' }}>
+          <ul style={{
             display: 'flex',
-            flexGrow: '1',
             justifyContent: 'center',
-            alignItems: 'center', // This centers the content vertically
+            alignItems: 'center',
             listStyleType: 'none',
+            transform: 'translateX(-44px)',
             marginLeft: '20px',
-            marginRight: '20px',
             paddingLeft: '0',
-            height: '72px', // This ensures the ul takes the full viewport height
-            position: 'fixed', // This positions the ul relative to the viewport
-            left: '0',
-            right: '0',
-            top: '0',
-            bottom: '0',
           }}>
             <FancyNavBar
               items={[
-                { icon: <LanguageIcon width={26} height="auto" language={i18n.language} />, 
-                label: "Language"
-              },
+                { icon: <LanguageIcon width={26} height="auto" />, label: "Language" },
               ]}
               height={60}
               padding={5}
               foregroundColor='var(--foreground)'
               backgroundColor="var(--navbarBackgroundWhenNotLoggedIn)"
-              onItemClick={(index) => setIsLanguageSelectorOpen(true)}
+              onItemClick={(index) => {
+                if (index === 0) {
+                  setIsLanguageSelectorOpen(true);
+                }
+              }}
             />
           </ul>
-          </div>
+          <ul style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            listStyleType: 'none',
+            transform: 'translateX(-40px)',
+            marginRight: '20px',
+            paddingLeft: '0',
+          }}>
+            <FancyNavBar
+              items={[
+                { icon: <FontAwesomeIcon icon={faGithub} width="auto" height="auto" />, label: "GitHub" },
+              ]}
+              height={60}
+              padding={5}
+              foregroundColor='var(--foreground)'
+              backgroundColor="var(--navbarBackgroundWhenNotLoggedIn)"
+              onItemClick={(index) => {
+                if (index === 0) {
+                  window.open("https://github.com/Northstrix/plum-harbor", "_blank");
+                }
+              }}
+            />
+          </ul>
+        </div>
           
           {/* Login Button */}
           <div style={{ 

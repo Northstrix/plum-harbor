@@ -147,5 +147,16 @@
   "failed-to-save-settings": "¡No se pudo guardar la configuración!",
   "settings-saved-successfully-top": "¡Configuración guardada exitosamente!",
   "app-sub-description1": "Esta aplicación está actualmente en fase experimental y no ha pasado por una auditoría de seguridad.",
-  "app-sub-description2": "¡Usala bajo tu propio riesgo!"
+  "app-sub-description2": "¡Usala bajo tu propio riesgo!",
+  "features": "Características",
+  "feature-1-name": "Cifrado de extremo a extremo",
+  "feature-1-description": "Cada archivo se cifra del lado del cliente usando el esquema de cifrado autenticado \"HMAC-SHA512 + ChaCha20 + Serpent-256 CBC\" antes de ser subido a la nube.",
+  "feature-2-name": "Almacenamiento personal de archivos",
+  "feature-2-description": "Podés guardar tus archivos personales en la nube, cifrados usando las claves derivadas de tu contraseña maestra.",
+  "feature-3-name": "Criptografía resistente a la computación cuántica",
+  "feature-3-description": "La aplicación usa algoritmos simétricos para el cifrado de archivos y ML-KEM-1024 para el envoltorio de claves resistente a la computación cuántica.",
+  "feature-4-name": "Verificación de integridad",
+  "feature-4-description": "Verifica la integridad de los archivos y registros usando etiquetas HMAC-SHA512 criptográficamente seguras.",
+  "feature-5-name": "Bóveda de contraseñas dedicada",
+  "feature-5-description": "La aplicación emplea el mismo esquema de cifrado usado para el cifrado de archivos para proteger tus credenciales de inicio de sesión."
 }

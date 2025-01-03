@@ -147,5 +147,16 @@
   "failed-to-save-settings": "Speichere vo de Einstellige isch fehlgschlage!",
   "settings-saved-successfully-top": "Einstellige erfolgrich gespeichere!",
   "app-sub-description1": "Die App isch aktuell i de experimentelle Phase und het kei Sicherheitsüberprüfung durchgführt.",
-  "app-sub-description2": "Benutz sie uf dini eigene Gefahr!"
+  "app-sub-description2": "Benutz sie uf dini eigene Gefahr!",
+  "features": "Funktione",
+  "feature-1-name": "End-zu-End-Verschlüsselig",
+  "feature-1-description": "Jedi Datei wird ufem Client mit em \"HMAC-SHA512 + ChaCha20 + Serpent-256 CBC\" authentifizierte Verschlüsseligsschema verschlüsslet, bevor si in d'Cloud ufeglade wird.",
+  "feature-2-name": "Persönliche Dateispiicher",
+  "feature-2-description": "Du chasch dini persönliche Dateie in de Cloud spichere, wo mit Schlüssel verschlüsslet sind, wo vo dim Hauptpasswort abgleitet werde.",
+  "feature-3-name": "Quanteresistenti Kryptographie",
+  "feature-3-description": "D'App bruucht symmetrischi Algorithme für d'Dateiverschlüsselig und ML-KEM-1024 für quanteresistents Schlüssel-Wrapping.",
+  "feature-4-name": "Integritätsprüefig",
+  "feature-4-description": "Prüeft d'Integrität vo Dateie und Datäsätz mit kryptographisch sichere HMAC-SHA512-Tags.",
+  "feature-5-name": "Spezielle Passwort-Tresor",
+  "feature-5-description": "D'App bruucht s'gliiche Verschlüsseligsschema wie für d'Dateiverschlüsselig zum dini Login-Date z'schütze."
 }

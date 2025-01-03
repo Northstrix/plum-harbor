@@ -147,5 +147,16 @@
   "failed-to-save-settings": "Speichern der Einstellungen is fehlgeschlagen!",
   "settings-saved-successfully-top": "Einstellungen erfolgreich gespeichert!",
   "app-sub-description1": "Diese App is derzeit in der experimentellen Phase und wurde no ned sicherheitsüberprüft.",
-  "app-sub-description2": "Verwend's auf eigene Gefahr!"
+  "app-sub-description2": "Verwend's auf eigene Gefahr!",
+  "features": "Funktiona",
+  "feature-1-name": "End-zu-End-Verschlüsselung",
+  "feature-1-description": "Jede Datei wird auf da Kundnseitn mit dem \"HMAC-SHA512 + ChaCha20 + Serpent-256 CBC\" authentifiziertn Verschlüsselungsschema verschlüsselt, bevor's in d'Cloud aufigladn wird.",
+  "feature-2-name": "Persönlicha Dateispeicher",
+  "feature-2-description": "Du konnst deine persönlichn Datein in da Cloud speichern, de mit Schlüssln verschlüsselt san, de von deim Hauptpasswort abgleitet werdn.",
+  "feature-3-name": "Quantnresistente Kryptographie",
+  "feature-3-description": "D'App verwendet symmetrische Algorithmen für d'Dateiverschlüsselung und ML-KEM-1024 für quantnresistentes Schlüssel-Wrapping.",
+  "feature-4-name": "Integritätsprüfung",
+  "feature-4-description": "Überprüft d'Integrität von Datein und Aufzeichnungen mit kryptographisch sichre HMAC-SHA512-Tags.",
+  "feature-5-name": "Eigener Passwort-Tresor",
+  "feature-5-description": "D'App verwendet s'gleiche Verschlüsselungsschema wie für d'Dateiverschlüsselung, um deine Anmeldedaten z'schützn."
 }

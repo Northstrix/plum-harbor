@@ -24,6 +24,9 @@ i18n
       de: {
         translation: require('./public/locales/de/translation.json'), // High German translations
       },
+      pt: {
+        translation: require('./public/locales/pt/translation.json'),
+      },
     },
     lng: 'en', // Default language
     fallbackLng: 'en',

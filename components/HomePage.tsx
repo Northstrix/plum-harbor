@@ -2,11 +2,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import ChronicleButton from '@/components/ui/ChronicleButton/ChronicleButton';
 import 'animate.css';
-import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
+import { useTranslation } from 'react-i18next';
 import CLikeInputField from '@/components/ui/CLikeInputField/CLikeInputField'; 
 import FileDownloader from '@/components/File-Related/FileDownloader';
+import { FeaturesGrid } from '@/components/ui/featuresSection/the-actual-features'
 
-const text: string[] = ["PLUM HARBOR"];
+//const text: string[] = ["PLUM HARBOR"];
 
 interface HomePageProps {
   setShowLogin: (show: boolean) => void; // Function to control login visibility
@@ -15,7 +16,7 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) => {
   const { i18n, t } = useTranslation(); // Initialize translation
-  const [hoveredLine, setHoveredLine] = useState<number | null>(null);
+  //const [hoveredLine, setHoveredLine] = useState<number | null>(null);
   const [isClient, setIsClient] = useState(false);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,8 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
   const [showAlternativeInscription, setShowAlternativeInscription] = useState(false);
   const [showTagEntry, setShowTagEntry] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
+  const [showFeaturesInscription, setShowFeaturesInscription] = useState(false);
+  const [showTheActualFeatures, setShowTheActualFeatures] = useState(false);
   const tagEntry = useRef<HTMLInputElement>(null);
   const downloaderRef = useRef<{ initiateDownload?: () => void }>(null);
   const [fileTagForDownloader, setFileTagForDownloader] = useState<string | null>(null);
@@ -35,42 +38,56 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading2(false);
-    }, 1300);
+    }, 700);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     const buttonTimer = setTimeout(() => {
       setShowButton(true);
-    }, 1800);
+    }, 1200);
     return () => clearTimeout(buttonTimer);
   }, []);
 
   useEffect(() => {
     const inscriptionTimer = setTimeout(() => {
       setShowAlternativeInscription(true);
-    }, 2800); // Adjust the delay as needed
+    }, 2200); // Adjust the delay as needed
     return () => clearTimeout(inscriptionTimer);
   }, []);
 
   useEffect(() => {
     const tagEntryTimer = setTimeout(() => {
       setShowTagEntry(true);
-    }, 3250); // Adjust the delay as needed
+    }, 2650); // Adjust the delay as needed
+    return () => clearTimeout(tagEntryTimer);
+  }, []);
+
+  useEffect(() => {
+    const tagEntryTimer = setTimeout(() => {
+      setShowFeaturesInscription(true);
+    }, 3650); // Adjust the delay as needed
+    return () => clearTimeout(tagEntryTimer);
+  }, []);
+
+  useEffect(() => {
+    const tagEntryTimer = setTimeout(() => {
+      setShowTheActualFeatures(true);
+    }, 4150); // Adjust the delay as needed
     return () => clearTimeout(tagEntryTimer);
   }, []);
 
   useEffect(() => {
     const footerTimer = setTimeout(() => {
       setShowFooter(true);
-    }, 4250);
+    }, 3150);
     return () => clearTimeout(footerTimer);
   }, []);
 
@@ -108,6 +125,7 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
     <div className="relative w-screen flex flex-col justify-start items-center mt-8 overflow-x-hidden overflow-y-auto">
       <div ref={textContainerRef} className="max-w-[1280px] w-full mx-auto px-4 text-center">
         <div className="container flex flex-col justify-center items-center relative z-20 py-10">
+          {/*
           {text.map((line, index) => {
             const delay = index * 0.2;
             return (
@@ -129,7 +147,7 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
                   onMouseLeave={() => setHoveredLine(null)}>
                 <div className="split-parent uppercase">
                   <div className="split-child" style={{ transitionDelay: `${delay}s` }}>
-                    {t('plum-harbor')} {/* Use translation for app name */}
+                    {t('plum-harbor')}
                   </div>
                 </div>
                 <span 
@@ -141,19 +159,18 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
                     transformOrigin: 'center',
                     transition: 'all cubic-bezier(.1,.5,.5,1) 0.4s',
                   }}>
-                  {t('plum-harbor')} {/* Use translation for app name */}
+                  {t('plum-harbor')}
                 </span>
               </h1>
             );
           })}
+          */}
         </div>
-        
         {/* App description */}
         <h2
           style={{
-            fontSize:
-              textContainerRef.current &&
-              textContainerRef.current.clientWidth >= 1232
+            fontSize: textContainerRef.current
+              ? textContainerRef.current.clientWidth >= 1232
                 ? i18n.language === 'he'
                   ? '5.0rem'
                   : i18n.language === 'es'
@@ -163,8 +180,9 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
                   : '4.5rem'
                 : `${Math.max(
                     36,
-                    (textContainerRef.current?.clientWidth || 0) * 0.055
-                  )}px`,
+                    textContainerRef.current.clientWidth * 0.055
+                  )}px`
+              : '36px', // Default size if ref is not available
             lineHeight: '1.2',
             color: 'var(--foreground)',
             opacity: loading ? '0' : '1',
@@ -175,7 +193,7 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
           <span >{t('pre-consonant-article-app-in-hebrew')}</span>{" "}
           {/* Conditional rendering based on RTL check */}
           {isRtl ? (
-            <span className="inline-block whitespace-nowrap bg-gradient-to-tr from-[var(--homepage-gray-text-gradient-color)] via-[var(--homepage-purple-text-gradient-color)] to-[var(--homepage-blue-text-gradient-color)] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-tr from-[var(--homepage-gray-text-gradient-color)] via-[var(--homepage-purple-text-gradient-color)] to-[var(--homepage-blue-text-gradient-color)] bg-clip-text text-transparent">
               {fileSharingText}
             </span>
           ) : (
@@ -285,7 +303,26 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
           </div>
         </div>
         <div style={{
-          marginTop: '96px',
+          marginTop: '120px',
+        }}></div>
+
+        <h2 style={{
+          fontSize: textContainerRef.current && textContainerRef.current.clientWidth >= 1232 ? '36px' : '32px',
+          lineHeight: '1.2',
+          color: 'var(--foreground)',
+          marginTop: '8px',
+          marginBottom: '32px',
+          opacity: showFeaturesInscription ? '1' : '0',
+          transition: 'opacity 1s ease-in-out',
+          fontWeight: i18n.language === 'he' ? '400' : '700', 
+        }}>
+          {t('features')}
+        </h2>
+        <div className={`animate__animated ${showTheActualFeatures ? 'animate__zoomIn' : 'opacity-0'}`}>
+          <FeaturesGrid/>
+        </div>
+        <div style={{
+          marginTop: '106px',
         }}></div>
       </div>
 
@@ -321,11 +358,12 @@ const HomePage: React.FC<HomePageProps> = ({ setShowLogin, setIsRegistering }) =
           z-index: 400;
           right: 0;
           height: 56px;
-          background-color: var(--notLoggedInBackground);
+          background-color: ${showFooter ? 'var(--notLoggedInFooterBackground)' : 'var(--notLoggedInBackground)'};
           display: flex;
-          justify-content: center; /* Center horizontally */
-          align-items: center; /* Center vertically */
+          justify-content: center;
+          align-items: center;
           color: var(--foreground);
+          transition: background-color 3s ease;
         }
         .footer-text {
           font-size: 16px;

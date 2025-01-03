@@ -10,7 +10,7 @@
   --negativeForeground: hsl(240, 16%, 12%);
   --generalBorderRadius: 0.76em;
   --loginFormBorderRadius: 2.25em;
-  --descriptionGray: #86868d;
+  --descriptionGray: #949499;
   --firstThemeColor: #4246CE;
   --middleThemeColor: #5c3fcd;
   --secondThemeColor: #7538CB;
@@ -75,6 +75,11 @@
   --homepage-purple-text-gradient-color: #7829b4;
   --homepage-blue-text-gradient-color: #0F50AF;
   --homepage-gray-text-gradient-color: #AE90C0;
+
+  --feature-container-background: #262632;
+  --notLoggedInFooterBackground: #0a0a0d;
+  --featureDescriptionColor: #e7e7ee;
+  --featureIconColor: #5A35B3;
 
 }
 
